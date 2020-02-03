@@ -184,44 +184,44 @@ let student = new Student('Marta', 'Dou', 1999, [75, 58, 45]);
 let student2 = new Student('John', 'Dou', 1996, [95, 99, 95]);
 let student3 = new Student('Dart', 'Veider', 1991, [5, 0, 3]);
 
-// Student1
-// student.present();
-// student.present();
-// student.present();
-// student.present();
-// student.present();
-// student.present();
-// student.present();
-// student.absent();
-//
-// //Student 2
-// student2.present();
-// student2.present();
-// student2.present();
-// student2.present();
-// student2.present();
-// student2.present();
-// student2.present();
-// student2.present();
-// student2.present();
-// student2.absent();
-//
-// //Student3
-// student3.present();
-// student3.absent();
-// student3.absent();
-//
-// console.log(`${student.name} ${student.lastname} age: `, student.age);
-// console.log(`${student.name} ${student.lastname} average marks: `, student.averageMark.toFixed(2));
-// student.summary();
-//
-// console.log(`${student2.name} ${student2.lastname} age: `, student2.age);
-// console.log(`${student2.name} ${student2.lastname} average marks: `, student2.averageMark.toFixed(2));
-// student2.summary();
-//
-// console.log(`${student3.name} ${student3.lastname} age: `, student3.age);
-// console.log(`${student3.name} ${student3.lastname} average marks: `, student3.averageMark.toFixed(2));
-// student3.summary();
+Student1
+student.present();
+student.present();
+student.present();
+student.present();
+student.present();
+student.present();
+student.present();
+student.absent();
+
+//Student 2
+student2.present();
+student2.present();
+student2.present();
+student2.present();
+student2.present();
+student2.present();
+student2.present();
+student2.present();
+student2.present();
+student2.absent();
+
+//Student3
+student3.present();
+student3.absent();
+student3.absent();
+
+console.log(`${student.name} ${student.lastname} age: `, student.age);
+console.log(`${student.name} ${student.lastname} average marks: `, student.averageMark.toFixed(2));
+student.summary();
+
+console.log(`${student2.name} ${student2.lastname} age: `, student2.age);
+console.log(`${student2.name} ${student2.lastname} average marks: `, student2.averageMark.toFixed(2));
+student2.summary();
+
+console.log(`${student3.name} ${student3.lastname} age: `, student3.age);
+console.log(`${student3.name} ${student3.lastname} average marks: `, student3.averageMark.toFixed(2));
+student3.summary();
 
 
 
