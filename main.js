@@ -18,6 +18,99 @@
 //     Ну и не забудьте после того как напишите замечательный конструктор, создать пару экземпляров(конкретных студентов)
 //     и подергать методы.
 
+
+// hamburger ES5
+const HAMBURGER_VALUE = {
+    SMALL_SIZE: {
+        price: 50,
+        calories: 20,
+    },
+    LARGE_SIZE: {
+        price: 100,
+        calories: 40,
+    },
+    STAFFING_CHEES: {
+        price: 10,
+        calories: 20,
+    },
+    STAFFING_SALAD: {
+        price: 20,
+        calories: 5,
+    },
+    STAFFING_POTATO: {
+        price: 15,
+        calories: 10,
+    },
+    TOPPING_SPICE: {
+        price: 15,
+        calories: 0,
+    },
+    TOPPING_SAUCE: {
+        price: 20,
+        calories: 5,
+    }
+}
+
+const HAMBURGER_METHOD = {
+    addToppings(topping) {
+        this.order.add(topping);
+    },
+
+    addSize(size) {
+        this.order.add(size);
+    },
+
+    removeToppings(topping) {
+        this.order.delete(topping);
+    },
+
+    getSizing() {
+        return this.size;
+    },
+
+    getStaffing() {
+        return this.staffing;
+    },
+
+    getToppings() {
+        return this.toppings;
+    },
+
+    calculateCalories() {
+        let calories = null;
+        for (let key of this.order) {
+            calories += key.calories;
+        }
+        return calories;
+    },
+
+    calculatePrice() {
+        let price = null;
+        for (let key of this.order) {
+            price += key.price;
+        }
+        return price;
+    }
+};
+
+function Hamburger() {
+    this.order = new Set();
+};
+
+Hamburger.prototype = Object.create(HAMBURGER_VALUE);
+HAMBURGER_VALUE.__proto__ = HAMBURGER_METHOD;
+
+let hamburger = new Hamburger();
+
+hamburger.addToppings(hamburger.TOPPING_SPICE);
+console.log(`Calories: ${hamburger.calculateCalories()}, Total price: ${hamburger.calculatePrice()}`);
+
+hamburger.addToppings(hamburger.TOPPING_SAUCE);
+hamburger.removeToppings(hamburger.TOPPING_SPICE);
+
+console.log(`Calories: ${hamburger.calculateCalories()}, Total price: ${hamburger.calculatePrice()}`);
+
+// Students
 class Student {
     constructor(name, lastname, birthYear, marks) {
         this.name = name;
@@ -92,43 +185,43 @@ let student2 = new Student('John', 'Dou', 1996, [95, 99, 95]);
 let student3 = new Student('Dart', 'Veider', 1991, [5, 0, 3]);
 
 // Student1
-student.present();
-student.present();
-student.present();
-student.present();
-student.present();
-student.present();
-student.present();
-student.absent();
-
-//Student 2
-student2.present();
-student2.present();
-student2.present();
-student2.present();
-student2.present();
-student2.present();
-student2.present();
-student2.present();
-student2.present();
-student2.absent();
-
-//Student3
-student3.present();
-student3.absent();
-student3.absent();
-
-console.log(`${student.name} ${student.lastname} age: `, student.age);
-console.log(`${student.name} ${student.lastname} average marks: `, student.averageMark.toFixed(2));
-student.summary();
-
-console.log(`${student2.name} ${student2.lastname} age: `, student2.age);
-console.log(`${student2.name} ${student2.lastname} average marks: `, student2.averageMark.toFixed(2));
-student2.summary();
-
-console.log(`${student3.name} ${student3.lastname} age: `, student3.age);
-console.log(`${student3.name} ${student3.lastname} average marks: `, student3.averageMark.toFixed(2));
-student3.summary();
+// student.present();
+// student.present();
+// student.present();
+// student.present();
+// student.present();
+// student.present();
+// student.present();
+// student.absent();
+//
+// //Student 2
+// student2.present();
+// student2.present();
+// student2.present();
+// student2.present();
+// student2.present();
+// student2.present();
+// student2.present();
+// student2.present();
+// student2.present();
+// student2.absent();
+//
+// //Student3
+// student3.present();
+// student3.absent();
+// student3.absent();
+//
+// console.log(`${student.name} ${student.lastname} age: `, student.age);
+// console.log(`${student.name} ${student.lastname} average marks: `, student.averageMark.toFixed(2));
+// student.summary();
+//
+// console.log(`${student2.name} ${student2.lastname} age: `, student2.age);
+// console.log(`${student2.name} ${student2.lastname} average marks: `, student2.averageMark.toFixed(2));
+// student2.summary();
+//
+// console.log(`${student3.name} ${student3.lastname} age: `, student3.age);
+// console.log(`${student3.name} ${student3.lastname} average marks: `, student3.averageMark.toFixed(2));
+// student3.summary();
 
 
 
